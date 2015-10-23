@@ -39,9 +39,10 @@ function renderMap(lat, lng) {
 
     });
 
-    marker.addListener('dblclick', function() {
-        navigate();
-    });
+    // marker.addListener('dblclick', function() {
+    //     navigate();
+    // });
+
 
     $(window).resize(function(e) {
         // 3 seconds after the resize, pan back to the marker.
