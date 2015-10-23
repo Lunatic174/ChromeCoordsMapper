@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+
+    "name": "ENCoordsMapper",
+    "description": "Extension for Encounter site, that finds the coordinates on the page and shows an embed map",
+    "version": "1.3",
+    "author": "Mikhail Kharin",
+    "icons": {
+        "16": "img/en-pointer-wide_16.png",
+        "48": "img/map-pointer_48.png",
+        "128": "img/map-pointer_128.png"
+    },
+
+    "page_action": {
+        "default_icon": "img/map-pointer_19.png",
+        "default_popup": "html/popup.html",
+        "default_title": "Highlite coords!"
+    },
+    "content_scripts": [{
+        "matches": ["http://*.en.cx/gameengines/encounter/play/*"],
+        "css": ["css/coords.css"],
+        "js": [
+            "js/jquery-1.11.3.min.js",
+            "js/coords.js"
+        ]
+    }],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://*.googleapis.com; object-src 'self' ",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "geolocation",
+        "https://ajax.googleapis.com/",
+        "https://maps.googleapis.com/",
+        "https://mts0.googleapis.com/"
+    ],
+    "sandbox": {
+        "pages": ["embedMap.html"]
+    },
+    "web_accessible_resources": [
+        "img/spoiler-icon.png",
+        "html/embedMap.html",
+        "js/embedMap.js",
+        "css/embedMap.css"
+    ]
+}

@@ -1,0 +1,6 @@
+.spoiler { overflow: hidden; }
+.spoiler iframe { border: 0; display: block; width: 100%; }
+.spoiler:before { float: left; content: " "; width: 16px; height: 16px; margin-top: 2px; display: block; border: 0 solid red; background: url("chrome-extension://__MSG_@@extension_id__/img/spoiler-icon.png") no-repeat left top; }
+.spoiler._opened:before { background-position: left bottom; }
+.spoiler .spoiler-title { border-bottom: 1px dashed; color: #6da3bd; font-weight: normal; cursor: pointer; }
+.spoiler .spoiler-content { padding-top: 10px; padding-bottom: 10px; padding: 10px; border: 1px solid #eee; background: #f9f9f9; margin-top: 10px; overflow: hidden; }
