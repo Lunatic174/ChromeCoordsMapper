@@ -4,16 +4,22 @@
     "name": "Coordinates Mapper for Encounter",
     "short_name": "ENCoordsMapper",
     "description": "Extension for Encounter site, that finds the coordinates on the page and shows an embed map",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "author": "Mikhail Kharin",
     "icons": {
         "16": "img/en-pointer-wide_16.png",
         "48": "img/map-pointer_48.png",
         "128": "img/map-pointer_128.png"
     },
-
+    "background": {
+        "scripts": ["js/bg.js"],
+        "persistent": false
+    },
     "page_action": {
-        "default_icon": "img/en-pointer-wide_19.png",
+        "default_icon": {
+            "19": "img/en-pointer-wide_19.png",
+            "38": "img/en-pointer-wide_38.png"
+        },
         "default_popup": "html/popup.html",
         "default_title": "Highlite coords!"
     },

@@ -38,7 +38,12 @@ function InsertMap(selector, lat, lng) {
 $(function() {
     FindCoords(".content p");
 
-    $("[data-coords]").each(function() {
+    var coords = $("[data-coords]");
+    if (coords.length) {
+        chrome.runtime.sendMessage('showPageAction');
+    }
+
+    coords.each(function() {
         var $this = $(this);
         var coordsType = $this.data("coords");
         var latHem = $this.data("lat-hem");
